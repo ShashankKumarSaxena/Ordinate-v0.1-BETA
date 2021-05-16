@@ -1,0 +1,648 @@
+[2021-03-13 11:32:42] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-13 11:32:42] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-13 11:32:42] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-13 11:32:42] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-13 11:32:42] [INFO   ] discord.client: Closing the event loop.
+[2021-03-13 18:55:59] [INFO   ] discord.client: logging in using static token
+[2021-03-13 18:56:01] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-13 18:56:01] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-mfdt",{"micros":66198,"calls":["discord-sessions-prd-2-103",{"micros":63868,"calls":["start_session",{"micros":41426,"calls":["api-prd-main-7ww3",{"micros":36040,"calls":["get_user",{"micros":3537},"add_authorized_ip",{"micros":3291},"get_guilds",{"micros":6390},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":7,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 603b3cf198208977f60c292c327f07df).
+[2021-03-13 18:56:03] [INFO   ] discord_slash: Syncing commands...
+[2021-03-13 18:56:06] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-13 19:23:36] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-13 19:23:36] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-13 19:23:39] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-13 19:23:40] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-13 19:23:40] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-13 19:23:46] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-13 19:23:46] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-nxhw",{"micros":61581,"calls":["discord-sessions-prd-2-77",{"micros":59587,"calls":["start_session",{"micros":34224,"calls":["api-prd-main-jbvz",{"micros":31221,"calls":["get_user",{"micros":4294},"add_authorized_ip",{"micros":1339},"get_guilds",{"micros":4279},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":56,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: d1b350a3627de474bcb8b73e54cb8ee0).
+[2021-03-13 19:57:31] [WARNING] discord.gateway: Shard ID 0 heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Python learn proj2\Official Discord Bot 1\main.py", line 286, in <module>
+    bot.run(TOKEN)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\client.py", line 708, in run
+    loop.run_forever()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\base_events.py", line 570, in run_forever
+    self._run_once()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\base_events.py", line 1859, in _run_once
+    handle._run()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\bot.py", line 942, in on_message
+    await self.process_commands(message)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\bot.py", line 939, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\bot.py", line 902, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\core.py", line 864, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "d:\Python learn proj2\Official Discord Bot 1\cogs\images.py", line 357, in magik
+    data = fetch_json(url=f"https://nekobot.xyz/api/imagegen?type=magik&image={user.avatar_url_as(format='png')}&intensity={intensity}")
+  File "d:\Python learn proj2\Official Discord Bot 1\cogs\utils\api_fetcher.py", line 11, in fetch_json
+    res = json.loads(requests.get(f"{url}").text)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 440, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1347, in getresponse
+    response.begin()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 268, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+
+[2021-03-13 19:57:41] [WARNING] discord.gateway: Shard ID 0 heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Python learn proj2\Official Discord Bot 1\main.py", line 286, in <module>
+    bot.run(TOKEN)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\client.py", line 708, in run
+    loop.run_forever()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\base_events.py", line 570, in run_forever
+    self._run_once()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\base_events.py", line 1859, in _run_once
+    handle._run()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\bot.py", line 942, in on_message
+    await self.process_commands(message)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\bot.py", line 939, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\bot.py", line 902, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\core.py", line 864, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "d:\Python learn proj2\Official Discord Bot 1\cogs\images.py", line 357, in magik
+    data = fetch_json(url=f"https://nekobot.xyz/api/imagegen?type=magik&image={user.avatar_url_as(format='png')}&intensity={intensity}")
+  File "d:\Python learn proj2\Official Discord Bot 1\cogs\utils\api_fetcher.py", line 11, in fetch_json
+    res = json.loads(requests.get(f"{url}").text)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 440, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1347, in getresponse
+    response.begin()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 268, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+
+[2021-03-13 19:57:51] [WARNING] discord.gateway: Shard ID 0 heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Python learn proj2\Official Discord Bot 1\main.py", line 286, in <module>
+    bot.run(TOKEN)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\client.py", line 708, in run
+    loop.run_forever()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\base_events.py", line 570, in run_forever
+    self._run_once()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\base_events.py", line 1859, in _run_once
+    handle._run()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\asyncio\events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\bot.py", line 942, in on_message
+    await self.process_commands(message)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\bot.py", line 939, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\bot.py", line 902, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\core.py", line 864, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "d:\Python learn proj2\Official Discord Bot 1\cogs\images.py", line 357, in magik
+    data = fetch_json(url=f"https://nekobot.xyz/api/imagegen?type=magik&image={user.avatar_url_as(format='png')}&intensity={intensity}")
+  File "d:\Python learn proj2\Official Discord Bot 1\cogs\utils\api_fetcher.py", line 11, in fetch_json
+    res = json.loads(requests.get(f"{url}").text)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 440, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1347, in getresponse
+    response.begin()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 268, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\SHASHANK\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+
+[2021-03-13 19:57:54] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-13 19:57:54] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-13 19:57:54] [INFO   ] discord.client: Cleaning up after 7 tasks.
+[2021-03-13 19:57:54] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-13 19:57:54] [INFO   ] discord.client: Closing the event loop.
+[2021-03-13 19:57:59] [INFO   ] discord.client: logging in using static token
+[2021-03-13 19:58:01] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-13 19:58:01] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-6m3v",{"micros":66712,"calls":["discord-sessions-prd-2-128",{"micros":65669,"calls":["start_session",{"micros":40438,"calls":["api-prd-main-pm34",{"micros":37714,"calls":["get_user",{"micros":6139},"add_authorized_ip",{"micros":1164},"get_guilds",{"micros":7829},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":6,"calls":[]},"presence_connect",{"micros":18084,"calls":[]}]}]}] (Session ID: b0fd3e89791af66af678c41f412455df).
+[2021-03-13 19:58:04] [INFO   ] discord_slash: Syncing commands...
+[2021-03-13 19:58:04] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-13 20:59:35] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-13 20:59:35] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-13 20:59:35] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-13 20:59:35] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-13 20:59:35] [INFO   ] discord.client: Closing the event loop.
+[2021-03-13 21:33:24] [INFO   ] discord.client: logging in using static token
+[2021-03-13 21:33:26] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-13 21:33:27] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-msv4",{"micros":738325,"calls":["discord-sessions-prd-2-99",{"micros":736814,"calls":["start_session",{"micros":705365,"calls":["api-prd-main-fbw4",{"micros":702245,"calls":["get_user",{"micros":13622},"add_authorized_ip",{"micros":11331},"get_guilds",{"micros":9801},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":10,"calls":[]},"presence_connect",{"micros":9888,"calls":[]}]}]}] (Session ID: 1998a2696818b8c927eab5d87c3b72ca).
+[2021-03-13 21:33:30] [INFO   ] discord_slash: Syncing commands...
+[2021-03-13 21:33:31] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-13 22:39:55] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-13 22:39:55] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-13 22:39:55] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-13 22:39:55] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-13 22:39:55] [INFO   ] discord.client: Closing the event loop.
+[2021-03-13 22:40:20] [INFO   ] discord.client: logging in using static token
+[2021-03-13 22:40:22] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-13 22:40:22] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-6rz6",{"micros":73755,"calls":["discord-sessions-prd-2-137",{"micros":71701,"calls":["start_session",{"micros":53595,"calls":["api-prd-main-jjf3",{"micros":50166,"calls":["get_user",{"micros":3679},"add_authorized_ip",{"micros":3866},"get_guilds",{"micros":8403},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":7,"calls":[]},"presence_connect",{"micros":10885,"calls":[]}]}]}] (Session ID: 4f954407d8e9936dcee0dcf3b55f98aa).
+[2021-03-13 22:40:25] [INFO   ] discord_slash: Syncing commands...
+[2021-03-13 22:40:26] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-13 22:55:47] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-13 22:55:47] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-13 22:55:47] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-13 22:55:48] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-13 22:55:48] [INFO   ] discord.client: Closing the event loop.
+[2021-03-13 22:57:09] [INFO   ] discord.client: logging in using static token
+[2021-03-13 22:57:12] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-13 22:57:12] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-845l",{"micros":101511,"calls":["discord-sessions-prd-2-115",{"micros":98758,"calls":["start_session",{"micros":87544,"calls":["api-prd-main-kt75",{"micros":83214,"calls":["get_user",{"micros":4344},"add_authorized_ip",{"micros":5974},"get_guilds",{"micros":14608},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":12,"calls":[]},"presence_connect",{"micros":6186,"calls":[]}]}]}] (Session ID: c6df53760556adb5f5e0b780ecf0bb32).
+[2021-03-13 22:57:15] [INFO   ] discord_slash: Syncing commands...
+[2021-03-13 22:57:16] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-13 23:09:08] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-13 23:09:08] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-13 23:09:08] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-13 23:09:08] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-13 23:09:08] [INFO   ] discord.client: Closing the event loop.
+[2021-03-13 23:09:22] [INFO   ] discord.client: logging in using static token
+[2021-03-13 23:09:24] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-13 23:09:25] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-pl9j",{"micros":46875,"calls":["discord-sessions-prd-2-5",{"micros":43012,"calls":["start_session",{"micros":29851,"calls":["api-prd-main-0fwd",{"micros":24937,"calls":["get_user",{"micros":3538},"add_authorized_ip",{"micros":1255},"get_guilds",{"micros":3353},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":5541,"calls":[]}]}]}] (Session ID: 23ea40246e12b469e8865dc40aee78c4).
+[2021-03-13 23:09:27] [INFO   ] discord_slash: Syncing commands...
+[2021-03-13 23:09:28] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-13 23:11:01] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-13 23:11:01] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-13 23:11:01] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-13 23:11:02] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-13 23:11:02] [INFO   ] discord.client: Closing the event loop.
+[2021-03-13 23:11:05] [INFO   ] discord.client: logging in using static token
+[2021-03-13 23:11:07] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-13 23:11:07] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-msv4",{"micros":71569,"calls":["discord-sessions-prd-2-48",{"micros":69696,"calls":["start_session",{"micros":39918,"calls":["api-prd-main-lw26",{"micros":34708,"calls":["get_user",{"micros":1970},"add_authorized_ip",{"micros":2748},"get_guilds",{"micros":5837},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":4,"calls":[]},"presence_connect",{"micros":20343,"calls":[]}]}]}] (Session ID: 8e561a8c1a8460d9451b16d9c832d10b).
+[2021-03-13 23:11:10] [INFO   ] discord_slash: Syncing commands...
+[2021-03-13 23:11:10] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-13 23:18:36] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-13 23:18:36] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-13 23:18:36] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-13 23:18:36] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-13 23:18:36] [INFO   ] discord.client: Closing the event loop.
+[2021-03-14 12:47:38] [INFO   ] discord.client: logging in using static token
+[2021-03-14 12:47:40] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 12:47:41] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-pl9j",{"micros":93604,"calls":["discord-sessions-prd-2-150",{"micros":86581,"calls":["start_session",{"micros":80044,"calls":["api-prd-main-1xws",{"micros":67362,"calls":["get_user",{"micros":8833},"add_authorized_ip",{"micros":1629},"get_guilds",{"micros":4220},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: f8f48599f290bf0125ace751d6f446aa).
+[2021-03-14 12:47:43] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 12:47:44] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 12:49:33] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-14 12:49:33] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-14 12:49:33] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-14 12:49:34] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-14 12:49:34] [INFO   ] discord.client: Closing the event loop.
+[2021-03-14 12:49:39] [INFO   ] discord.client: logging in using static token
+[2021-03-14 12:49:41] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 12:49:41] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-tq77",{"micros":46227,"calls":["discord-sessions-prd-2-149",{"micros":45161,"calls":["start_session",{"micros":37232,"calls":["api-prd-main-6z9c",{"micros":34963,"calls":["get_user",{"micros":5661},"add_authorized_ip",{"micros":1293},"get_guilds",{"micros":5290},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":5,"calls":[]},"presence_connect",{"micros":518,"calls":[]}]}]}] (Session ID: 33f2db922fac963bf781783cf91b776e).
+[2021-03-14 12:49:44] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 12:49:45] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 12:55:30] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-14 12:55:30] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-14 12:55:30] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-14 12:55:31] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-14 12:55:31] [INFO   ] discord.client: Closing the event loop.
+[2021-03-14 13:47:07] [INFO   ] discord.client: logging in using static token
+[2021-03-14 13:47:09] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 13:47:10] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-mpcj",{"micros":94614,"calls":["discord-sessions-prd-2-78",{"micros":93768,"calls":["start_session",{"micros":85305,"calls":["api-prd-main-jbq5",{"micros":78203,"calls":["get_user",{"micros":6669},"add_authorized_ip",{"micros":5378},"get_guilds",{"micros":10279},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":2433,"calls":[]}]}]}] (Session ID: 99cc074ef3469f933ca513191eee80a8).
+[2021-03-14 13:47:12] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 13:47:13] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 13:47:50] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-14 13:47:50] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-14 13:47:50] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-14 13:47:50] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-14 13:47:50] [INFO   ] discord.client: Closing the event loop.
+[2021-03-14 13:47:53] [INFO   ] discord.client: logging in using static token
+[2021-03-14 13:47:55] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 13:47:55] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-b92s",{"micros":91447,"calls":["discord-sessions-prd-2-60",{"micros":85086,"calls":["start_session",{"micros":79403,"calls":["api-prd-main-33zm",{"micros":76773,"calls":["get_user",{"micros":11561},"add_authorized_ip",{"micros":13513},"get_guilds",{"micros":13149},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 1d8c76e071e52045e6a9d23757667021).
+[2021-03-14 13:47:58] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 13:47:58] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 14:44:07] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-14 14:44:07] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-14 14:44:11] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-14 14:44:13] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-14 14:44:13] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-14 14:44:19] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 14:44:20] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-tfnb",{"micros":132472,"calls":["discord-sessions-prd-2-124",{"micros":130589,"calls":["start_session",{"micros":71784,"calls":["api-prd-main-fd8v",{"micros":68891,"calls":["get_user",{"micros":3487},"add_authorized_ip",{"micros":11848},"get_guilds",{"micros":17882},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":6,"calls":[]},"presence_connect",{"micros":34420,"calls":[]}]}]}] (Session ID: fe71ae70fcbb0f4296a0fbd84d8fa857).
+[2021-03-14 15:30:01] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-14 15:30:01] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-14 15:30:01] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-14 15:30:02] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-14 15:30:02] [INFO   ] discord.client: Closing the event loop.
+[2021-03-14 15:30:05] [INFO   ] discord.client: logging in using static token
+[2021-03-14 15:30:07] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 15:30:08] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-p5mr",{"micros":45952,"calls":["discord-sessions-prd-2-136",{"micros":44413,"calls":["start_session",{"micros":28890,"calls":["api-prd-main-lxgm",{"micros":26364,"calls":["get_user",{"micros":2038},"add_authorized_ip",{"micros":1348},"get_guilds",{"micros":4740},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":13,"calls":[]},"presence_connect",{"micros":7439,"calls":[]}]}]}] (Session ID: f52c1a7a7ac0da058170660411b77793).
+[2021-03-14 15:30:10] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 15:30:11] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 16:33:38] [INFO   ] discord.client: logging in using static token
+[2021-03-14 16:33:40] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 16:33:40] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-rb6c",{"micros":86508,"calls":["discord-sessions-prd-2-130",{"micros":82011,"calls":["start_session",{"micros":61284,"calls":["api-prd-main-99s2",{"micros":58068,"calls":["get_user",{"micros":15176},"add_authorized_ip",{"micros":1683},"get_guilds",{"micros":16844},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: cc3086274454a1a52e230ead7e9c9b91).
+[2021-03-14 16:33:43] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 16:33:43] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 16:34:42] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-14 16:34:42] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-14 16:34:42] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-14 16:34:42] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-14 16:34:42] [INFO   ] discord.client: Closing the event loop.
+[2021-03-14 16:34:45] [INFO   ] discord.client: logging in using static token
+[2021-03-14 16:34:46] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 16:34:47] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-p5mr",{"micros":65762,"calls":["discord-sessions-prd-2-100",{"micros":59488,"calls":["start_session",{"micros":43377,"calls":["api-prd-main-qgh3",{"micros":40443,"calls":["get_user",{"micros":4737},"add_authorized_ip",{"micros":4347},"get_guilds",{"micros":4478},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":7,"calls":[]},"presence_connect",{"micros":13976,"calls":[]}]}]}] (Session ID: e75e50b84f394aac4c5e6daa0dfd433e).
+[2021-03-14 16:34:49] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 16:34:50] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 16:36:55] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-14 16:36:55] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-14 16:36:55] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-14 16:36:55] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-14 16:36:55] [INFO   ] discord.client: Closing the event loop.
+[2021-03-14 16:36:57] [INFO   ] discord.client: logging in using static token
+[2021-03-14 16:36:59] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 16:37:00] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-6f7n",{"micros":75642,"calls":["discord-sessions-prd-2-125",{"micros":73700,"calls":["start_session",{"micros":52437,"calls":["api-prd-main-q246",{"micros":48192,"calls":["get_user",{"micros":10863},"add_authorized_ip",{"micros":3290},"get_guilds",{"micros":6181},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":4,"calls":[]},"presence_connect",{"micros":0,"calls":[]}]}]}] (Session ID: 01396944ad50a8abb3f5c8bcf3efab39).
+[2021-03-14 16:37:02] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 16:37:03] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 16:38:05] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-14 16:38:05] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-14 16:38:05] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-14 16:38:06] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-14 16:38:06] [INFO   ] discord.client: Closing the event loop.
+[2021-03-14 16:38:12] [INFO   ] discord.client: logging in using static token
+[2021-03-14 16:38:13] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 16:38:14] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-pwhw",{"micros":100938,"calls":["discord-sessions-prd-2-134",{"micros":98839,"calls":["start_session",{"micros":69891,"calls":["api-prd-main-rfz0",{"micros":67835,"calls":["get_user",{"micros":2147},"add_authorized_ip",{"micros":1194},"get_guilds",{"micros":48457},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":4,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 1b0638fea1c44f892018d70e955378dd).
+[2021-03-14 16:38:16] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 16:38:17] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 16:38:27] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-14 16:38:27] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-14 16:38:27] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-14 16:38:27] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-14 16:38:27] [INFO   ] discord.client: Closing the event loop.
+[2021-03-14 16:38:29] [INFO   ] discord.client: logging in using static token
+[2021-03-14 16:38:31] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 16:38:32] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-fbdm",{"micros":84501,"calls":["discord-sessions-prd-2-42",{"micros":80129,"calls":["start_session",{"micros":55978,"calls":["api-prd-main-8mz6",{"micros":51347,"calls":["get_user",{"micros":5688},"add_authorized_ip",{"micros":5367},"get_guilds",{"micros":7548},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":39,"calls":[]},"presence_connect",{"micros":8323,"calls":[]}]}]}] (Session ID: f149a9a2534dd2b0d259f8746b1037f5).
+[2021-03-14 16:38:34] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 16:38:35] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 17:44:55] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-14 17:44:56] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-14 17:44:56] [INFO   ] discord.gateway: Shard ID 0 has successfully RESUMED session f149a9a2534dd2b0d259f8746b1037f5 under trace ["gateway-prd-main-jvn8",{"micros":3246,"calls":["discord-sessions-prd-2-42",{"micros":62}]}].
+[2021-03-14 17:58:28] [WARNING] discord.gateway: Shard ID 0 has stopped responding to the gateway. Closing and restarting.
+[2021-03-14 17:58:28] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-14 17:58:28] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-14 17:58:32] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-14 17:58:32] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-14 17:58:33] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-14 17:58:40] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 17:58:41] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-ncvv",{"micros":90733,"calls":["discord-sessions-prd-2-85",{"micros":87563,"calls":["start_session",{"micros":43274,"calls":["api-prd-main-gvz5",{"micros":38123,"calls":["get_user",{"micros":5402},"add_authorized_ip",{"micros":1564},"get_guilds",{"micros":4771},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":4,"calls":[]},"presence_connect",{"micros":16501,"calls":[]}]}]}] (Session ID: 5c090b77a39943b23436568c45698caf).
+[2021-03-14 19:28:54] [INFO   ] discord.client: logging in using static token
+[2021-03-14 19:28:56] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 19:28:57] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-c00x",{"micros":67877,"calls":["discord-sessions-prd-2-70",{"micros":62384,"calls":["start_session",{"micros":33109,"calls":["api-prd-main-5b4b",{"micros":29683,"calls":["get_user",{"micros":4062},"add_authorized_ip",{"micros":1524},"get_guilds",{"micros":5124},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":21093,"calls":[]}]}]}] (Session ID: 193f22258c29dea1adafbeac124bd065).
+[2021-03-14 19:28:59] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 19:29:00] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 19:39:04] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-14 19:39:04] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-14 19:39:04] [INFO   ] discord.client: Cleaning up after 4 tasks.
+[2021-03-14 19:39:05] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-14 19:39:05] [INFO   ] discord.client: Closing the event loop.
+[2021-03-14 19:39:09] [INFO   ] discord.client: logging in using static token
+[2021-03-14 19:39:16] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 19:39:17] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-d8d5",{"micros":60848,"calls":["discord-sessions-prd-2-16",{"micros":59897,"calls":["start_session",{"micros":47996,"calls":["api-prd-main-09nz",{"micros":45590,"calls":["get_user",{"micros":4197},"add_authorized_ip",{"micros":8829},"get_guilds",{"micros":8263},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":7,"calls":[]},"presence_connect",{"micros":4185,"calls":[]}]}]}] (Session ID: c5bbe903d9b001b5ff0cc30cd29789fd).
+[2021-03-14 19:39:19] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 19:39:20] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-14 20:25:08] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-14 20:25:08] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-14 20:25:08] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-14 20:25:09] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-14 20:25:09] [INFO   ] discord.client: Closing the event loop.
+[2021-03-14 20:25:25] [INFO   ] discord.client: logging in using static token
+[2021-03-14 20:25:27] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-14 20:25:27] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-p7kr",{"micros":94564,"calls":["discord-sessions-prd-2-115",{"micros":93394,"calls":["start_session",{"micros":77959,"calls":["api-prd-main-2w56",{"micros":73723,"calls":["get_user",{"micros":6203},"add_authorized_ip",{"micros":4410},"get_guilds",{"micros":11876},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":8,"calls":[]},"presence_connect",{"micros":5210,"calls":[]}]}]}] (Session ID: 42c748de9331f4767bc00c78750cdb1f).
+[2021-03-14 20:25:30] [INFO   ] discord_slash: Syncing commands...
+[2021-03-14 20:25:31] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 12:13:33] [INFO   ] discord.client: logging in using static token
+[2021-03-15 12:13:38] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 12:13:38] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-d8d5",{"micros":80935,"calls":["discord-sessions-prd-2-6",{"micros":79016,"calls":["start_session",{"micros":31050,"calls":["api-prd-main-70gz",{"micros":28455,"calls":["get_user",{"micros":2553},"add_authorized_ip",{"micros":1674},"get_guilds",{"micros":6762},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":6,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 2c62b400034ce04af59efd10814272e2).
+[2021-03-15 12:13:41] [INFO   ] discord_slash: Syncing commands...
+[2021-03-15 12:13:43] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 12:20:50] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-15 12:20:50] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-15 12:20:50] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-15 12:20:51] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-15 12:20:51] [INFO   ] discord.client: Closing the event loop.
+[2021-03-15 12:20:59] [INFO   ] discord.client: logging in using static token
+[2021-03-15 12:21:03] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 12:21:04] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-7xkm",{"micros":43984,"calls":["discord-sessions-prd-2-129",{"micros":39495,"calls":["start_session",{"micros":23686,"calls":["api-prd-main-n6f1",{"micros":21505,"calls":["get_user",{"micros":1972},"add_authorized_ip",{"micros":1220},"get_guilds",{"micros":3434},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":6,"calls":[]},"presence_connect",{"micros":8869,"calls":[]}]}]}] (Session ID: 0be3e933a584c0ac737e76e83c2c2247).
+[2021-03-15 12:21:06] [INFO   ] discord_slash: Syncing commands...
+[2021-03-15 12:21:07] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 12:27:05] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-15 12:27:05] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-15 12:27:05] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-15 12:27:07] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-15 12:27:07] [INFO   ] discord.client: Closing the event loop.
+[2021-03-15 12:27:10] [INFO   ] discord.client: logging in using static token
+[2021-03-15 12:27:15] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 12:27:15] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-6m3v",{"micros":101615,"calls":["discord-sessions-prd-2-85",{"micros":90943,"calls":["start_session",{"micros":47145,"calls":["api-prd-main-09nz",{"micros":44222,"calls":["get_user",{"micros":2452},"add_authorized_ip",{"micros":4617},"get_guilds",{"micros":5998},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":5,"calls":[]},"presence_connect",{"micros":30206,"calls":[]}]}]}] (Session ID: 6eb7298e3f5c95fcaf98e4e2020cf7f9).
+[2021-03-15 12:27:18] [INFO   ] discord_slash: Syncing commands...
+[2021-03-15 12:27:19] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 13:14:15] [INFO   ] discord.client: logging in using static token
+[2021-03-15 13:14:21] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 13:14:21] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-5k6v",{"micros":121045,"calls":["discord-sessions-prd-2-45",{"micros":117631,"calls":["start_session",{"micros":32088,"calls":["api-prd-main-56c0",{"micros":28876,"calls":["get_user",{"micros":2295},"add_authorized_ip",{"micros":1711},"get_guilds",{"micros":4059},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":5,"calls":[]},"presence_connect",{"micros":66078,"calls":[]}]}]}] (Session ID: 004a915691d1e2b1e6a90f743bc619eb).
+[2021-03-15 13:14:24] [INFO   ] discord_slash: Syncing commands...
+[2021-03-15 13:14:29] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 13:53:50] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 13:53:50] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 13:53:51] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 13:53:52] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-15 13:53:54] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-15 13:54:04] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 13:54:05] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-vmwd",{"micros":106624,"calls":["discord-sessions-prd-2-150",{"micros":104988,"calls":["start_session",{"micros":54035,"calls":["api-prd-main-nnxz",{"micros":50160,"calls":["get_user",{"micros":10015},"add_authorized_ip",{"micros":1278},"get_guilds",{"micros":2792},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":10,"calls":[]},"presence_connect",{"micros":6829,"calls":[]}]}]}] (Session ID: 8010e74f496e12d59429eb5c48701974).
+[2021-03-15 13:54:48] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-15 13:54:48] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-15 13:54:48] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-15 13:54:49] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-15 13:54:49] [INFO   ] discord.client: Closing the event loop.
+[2021-03-15 13:55:30] [INFO   ] discord.client: logging in using static token
+[2021-03-15 13:55:32] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 13:55:33] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-kmjx",{"micros":38202,"calls":["discord-sessions-prd-2-69",{"micros":34450,"calls":["start_session",{"micros":25343,"calls":["api-prd-main-ltb9",{"micros":21585,"calls":["get_user",{"micros":2015},"add_authorized_ip",{"micros":1302},"get_guilds",{"micros":2733},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":6,"calls":[]},"presence_connect",{"micros":93,"calls":[]}]}]}] (Session ID: f41452d2482071e113015712d2a71c1a).
+[2021-03-15 13:55:35] [INFO   ] discord_slash: Syncing commands...
+[2021-03-15 13:55:39] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 14:01:38] [WARNING] discord.gateway: Shard ID 0 has stopped responding to the gateway. Closing and restarting.
+[2021-03-15 14:01:38] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 14:01:38] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 14:01:39] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 14:01:39] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-15 14:01:40] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-15 14:01:46] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 14:01:46] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-bz4p",{"micros":127942,"calls":["discord-sessions-prd-2-124",{"micros":127148,"calls":["start_session",{"micros":90820,"calls":["api-prd-main-r5s3",{"micros":77002,"calls":["get_user",{"micros":8066},"add_authorized_ip",{"micros":18437},"get_guilds",{"micros":8305},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":26,"calls":[]},"presence_connect",{"micros":11034,"calls":[]}]}]}] (Session ID: ee962e1640f399b26f4f6dcef04e7c93).
+[2021-03-15 14:29:07] [WARNING] discord.gateway: Shard ID 0 has stopped responding to the gateway. Closing and restarting.
+[2021-03-15 14:29:07] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 14:29:07] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 14:29:15] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 14:29:15] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-15 14:29:16] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-15 14:29:23] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 14:29:23] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-fl4v",{"micros":99343,"calls":["discord-sessions-prd-2-125",{"micros":98177,"calls":["start_session",{"micros":33236,"calls":["api-prd-main-wjqf",{"micros":30052,"calls":["get_user",{"micros":3309},"add_authorized_ip",{"micros":1338},"get_guilds",{"micros":3604},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":6,"calls":[]},"presence_connect",{"micros":32261,"calls":[]}]}]}] (Session ID: d12f541559f9236171982dd4cd88d4a0).
+[2021-03-15 14:43:14] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 14:43:14] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 14:43:18] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 14:43:18] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-15 14:43:19] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-15 14:43:25] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 14:43:25] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-vdk2",{"micros":43857,"calls":["discord-sessions-prd-2-76",{"micros":41370,"calls":["start_session",{"micros":26395,"calls":["api-prd-main-mczc",{"micros":24013,"calls":["get_user",{"micros":2268},"add_authorized_ip",{"micros":1543},"get_guilds",{"micros":3700},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":5,"calls":[]},"presence_connect",{"micros":2,"calls":[]}]}]}] (Session ID: abe559f4d719ac0de9dd49b148ab32fc).
+[2021-03-15 14:49:28] [WARNING] discord.gateway: Shard ID 0 has stopped responding to the gateway. Closing and restarting.
+[2021-03-15 14:49:28] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 14:49:28] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 14:49:33] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 14:49:34] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-15 14:49:34] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-15 14:49:40] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 14:49:40] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-nb4z",{"micros":45984,"calls":["discord-sessions-prd-2-116",{"micros":45074,"calls":["start_session",{"micros":29920,"calls":["api-prd-main-cv65",{"micros":26977,"calls":["get_user",{"micros":2559},"add_authorized_ip",{"micros":1212},"get_guilds",{"micros":4685},"coros_wait",{"micros":13}]}]},"guilds_connect",{"micros":7,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: e9f76905b9b65f648a9aa35c6fed3259).
+[2021-03-15 14:51:50] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 14:51:50] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 14:51:51] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 14:51:52] [INFO   ] discord.gateway: Shard ID 0 has successfully RESUMED session e9f76905b9b65f648a9aa35c6fed3259 under trace ["gateway-prd-main-845l",{"micros":3280,"calls":["discord-sessions-prd-2-116",{"micros":164}]}].
+[2021-03-15 14:57:03] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-15 14:57:03] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-15 14:57:03] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-15 14:57:03] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-15 14:57:03] [INFO   ] discord.client: Closing the event loop.
+[2021-03-15 14:57:06] [INFO   ] discord.client: logging in using static token
+[2021-03-15 14:57:08] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 14:57:08] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-9j6b",{"micros":98436,"calls":["discord-sessions-prd-2-50",{"micros":95704,"calls":["start_session",{"micros":40971,"calls":["api-prd-main-xkdj",{"micros":34595,"calls":["get_user",{"micros":2768},"add_authorized_ip",{"micros":1599},"get_guilds",{"micros":7015},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":4,"calls":[]},"presence_connect",{"micros":39712,"calls":[]}]}]}] (Session ID: 7cf6eea82710c154122d00bb7a54de86).
+[2021-03-15 14:57:10] [INFO   ] discord_slash: Syncing commands...
+[2021-03-15 14:57:11] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 14:59:23] [ERROR  ] asyncio: Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002A2997146D0>
+[2021-03-15 14:59:23] [ERROR  ] asyncio: Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000002A29964FB80>, 190194.046)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000002A299714A00>
+[2021-03-15 15:01:24] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-15 15:01:24] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-15 15:01:24] [INFO   ] discord.client: Cleaning up after 4 tasks.
+[2021-03-15 15:01:24] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-15 15:01:24] [INFO   ] discord.client: Closing the event loop.
+[2021-03-15 15:05:36] [INFO   ] discord.client: logging in using static token
+[2021-03-15 15:05:38] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 15:05:38] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-d8bm",{"micros":63956,"calls":["discord-sessions-prd-2-83",{"micros":62641,"calls":["start_session",{"micros":45438,"calls":["api-prd-main-856l",{"micros":42696,"calls":["get_user",{"micros":4750},"add_authorized_ip",{"micros":1230},"get_guilds",{"micros":6915},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":19,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: c7d6bf4732f79b2e3e26c8ac70e46234).
+[2021-03-15 15:05:40] [INFO   ] discord_slash: Syncing commands...
+[2021-03-15 15:05:42] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 15:13:07] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 15:13:07] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 15:13:08] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 15:13:09] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-15 15:13:09] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-15 15:13:15] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 15:13:16] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-rr12",{"micros":143265,"calls":["discord-sessions-prd-2-42",{"micros":139405,"calls":["start_session",{"micros":104243,"calls":["api-prd-main-pxw0",{"micros":101447,"calls":["get_user",{"micros":7470},"add_authorized_ip",{"micros":6149},"get_guilds",{"micros":32439},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":6,"calls":[]},"presence_connect",{"micros":0,"calls":[]}]}]}] (Session ID: 404a29dfa1d913a1b2d5939a270f27d1).
+[2021-03-15 15:33:30] [WARNING] discord.gateway: Shard ID 0 has stopped responding to the gateway. Closing and restarting.
+[2021-03-15 15:33:30] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 15:33:30] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 15:33:40] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 15:33:40] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-15 15:33:41] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-15 15:33:46] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 15:33:47] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-fjjh",{"micros":196908,"calls":["discord-sessions-prd-2-99",{"micros":195766,"calls":["start_session",{"micros":140499,"calls":["api-prd-main-wpsx",{"micros":137947,"calls":["get_user",{"micros":16344},"add_authorized_ip",{"micros":2143},"get_guilds",{"micros":3943},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":6,"calls":[]},"presence_connect",{"micros":39858,"calls":[]}]}]}] (Session ID: 5e8f363b26f688f795b6076d74388fdb).
+[2021-03-15 15:37:36] [WARNING] discord.gateway: Shard ID 0 has stopped responding to the gateway. Closing and restarting.
+[2021-03-15 15:37:36] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 15:37:36] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 15:37:37] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 15:37:37] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-15 15:37:38] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-15 15:37:43] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 15:37:44] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-dl7c",{"micros":90848,"calls":["discord-sessions-prd-2-112",{"micros":89084,"calls":["start_session",{"micros":27958,"calls":["api-prd-main-l0g4",{"micros":25468,"calls":["get_user",{"micros":2036},"add_authorized_ip",{"micros":1272},"get_guilds",{"micros":4567},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":9,"calls":[]},"presence_connect",{"micros":17254,"calls":[]}]}]}] (Session ID: ad91266cc4ced4e4ec70ca1f5b6a4c68).
+[2021-03-15 15:41:47] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 15:41:47] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 15:41:48] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 15:41:48] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-15 15:41:48] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-15 15:41:54] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 15:41:54] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-6f7n",{"micros":50982,"calls":["discord-sessions-prd-2-25",{"micros":47019,"calls":["start_session",{"micros":33060,"calls":["api-prd-main-llwk",{"micros":30382,"calls":["get_user",{"micros":1990},"add_authorized_ip",{"micros":1522},"get_guilds",{"micros":4338},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":17,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 875fd4a412a90bd362c4b185d2ec37da).
+[2021-03-15 15:58:56] [WARNING] discord.gateway: Shard ID 0 has stopped responding to the gateway. Closing and restarting.
+[2021-03-15 15:58:56] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 15:58:56] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 15:58:59] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 15:59:00] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-15 15:59:00] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-15 15:59:06] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 15:59:06] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-lrmx",{"micros":97940,"calls":["discord-sessions-prd-2-22",{"micros":95665,"calls":["start_session",{"micros":81058,"calls":["api-prd-main-7rhl",{"micros":74113,"calls":["get_user",{"micros":4405},"add_authorized_ip",{"micros":2886},"get_guilds",{"micros":4790},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":4,"calls":[]},"presence_connect",{"micros":6969,"calls":[]}]}]}] (Session ID: 87f0863ac80e1450a0af8e8dda437312).
+[2021-03-15 16:19:49] [WARNING] discord.gateway: Can't keep up, shard ID 0 websocket is 12.7s behind.
+[2021-03-15 16:38:27] [WARNING] discord.gateway: Shard ID 0 has stopped responding to the gateway. Closing and restarting.
+[2021-03-15 16:38:27] [INFO   ] discord.gateway: Timed out receiving packet. Attempting a reconnect.
+[2021-03-15 16:38:27] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 16:38:28] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 16:38:30] [INFO   ] discord.gateway: Shard ID 0 session has been invalidated.
+[2021-03-15 16:38:30] [INFO   ] discord.shard: Got a request to IDENTIFY the websocket at Shard ID 0.
+[2021-03-15 16:38:36] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 16:38:37] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-m7ps",{"micros":82438,"calls":["discord-sessions-prd-2-39",{"micros":79527,"calls":["start_session",{"micros":61582,"calls":["api-prd-main-3snw",{"micros":58908,"calls":["get_user",{"micros":4320},"add_authorized_ip",{"micros":1385},"get_guilds",{"micros":32716},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":6,"calls":[]},"presence_connect",{"micros":5534,"calls":[]}]}]}] (Session ID: 5aa29f461687c3529c6dc2a5051f1e38).
+[2021-03-15 17:18:38] [INFO   ] discord.gateway: Websocket closed with 1006, attempting a reconnect.
+[2021-03-15 17:18:38] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 17:18:39] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 17:18:40] [INFO   ] discord.gateway: Shard ID 0 has successfully RESUMED session 5aa29f461687c3529c6dc2a5051f1e38 under trace ["gateway-prd-main-z0q0",{"micros":3076,"calls":["discord-sessions-prd-2-39",{"micros":30}]}].
+[2021-03-15 17:50:52] [INFO   ] discord.gateway: Websocket closed with 1006, attempting a reconnect.
+[2021-03-15 17:50:52] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 17:50:53] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 17:50:54] [INFO   ] discord.gateway: Shard ID 0 has successfully RESUMED session 5aa29f461687c3529c6dc2a5051f1e38 under trace ["gateway-prd-main-fdnq",{"micros":4234,"calls":["discord-sessions-prd-2-39",{"micros":135}]}].
+[2021-03-15 18:25:05] [INFO   ] discord.gateway: Websocket closed with 1006, attempting a reconnect.
+[2021-03-15 18:25:05] [INFO   ] discord.shard: Got a request to RESUME the websocket at Shard ID 0.
+[2021-03-15 18:25:05] [INFO   ] discord.gateway: Shard ID 0 has sent the RESUME payload.
+[2021-03-15 18:25:06] [INFO   ] discord.gateway: Shard ID 0 has successfully RESUMED session 5aa29f461687c3529c6dc2a5051f1e38 under trace ["gateway-prd-main-gbmp",{"micros":2085,"calls":["discord-sessions-prd-2-39",{"micros":136}]}].
+[2021-03-15 19:51:21] [INFO   ] discord.client: logging in using static token
+[2021-03-15 19:51:22] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 19:51:23] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-ll50",{"micros":90028,"calls":["discord-sessions-prd-2-40",{"micros":87610,"calls":["start_session",{"micros":30955,"calls":["api-prd-main-tbtk",{"micros":28183,"calls":["get_user",{"micros":2640},"add_authorized_ip",{"micros":1471},"get_guilds",{"micros":5689},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":10,"calls":[]},"presence_connect",{"micros":33239,"calls":[]}]}]}] (Session ID: 42df6cd413511a669b065ce85a5dd570).
+[2021-03-15 19:51:25] [INFO   ] discord_slash: Syncing commands...
+[2021-03-15 19:51:26] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 19:55:00] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-15 19:55:00] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-15 19:55:00] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-15 19:55:00] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-15 19:55:00] [INFO   ] discord.client: Closing the event loop.
+[2021-03-15 19:55:07] [INFO   ] discord.client: logging in using static token
+[2021-03-15 19:55:09] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 19:55:09] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-wft6",{"micros":84948,"calls":["discord-sessions-prd-2-111",{"micros":81436,"calls":["start_session",{"micros":36049,"calls":["api-prd-main-z072",{"micros":33334,"calls":["get_user",{"micros":2565},"add_authorized_ip",{"micros":1603},"get_guilds",{"micros":8985},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":8,"calls":[]},"presence_connect",{"micros":7858,"calls":[]}]}]}] (Session ID: 7147d630286d54a8e80b44a76c6f2993).
+[2021-03-15 19:55:12] [INFO   ] discord_slash: Syncing commands...
+[2021-03-15 19:55:12] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 19:58:34] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-15 19:58:34] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-15 19:58:34] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-15 19:58:34] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-15 19:58:34] [INFO   ] discord.client: Closing the event loop.
+[2021-03-15 19:58:38] [INFO   ] discord.client: logging in using static token
+[2021-03-15 19:58:39] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 19:58:40] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-nxhw",{"micros":95723,"calls":["discord-sessions-prd-2-128",{"micros":93304,"calls":["start_session",{"micros":71012,"calls":["api-prd-main-99s2",{"micros":68309,"calls":["get_user",{"micros":6048},"add_authorized_ip",{"micros":4041},"get_guilds",{"micros":8838},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":4,"calls":[]},"presence_connect",{"micros":2,"calls":[]}]}]}] (Session ID: 7df8132182022ee548c71a67c51b4a79).
+[2021-03-15 19:58:42] [INFO   ] discord_slash: Syncing commands...
+[2021-03-15 19:58:43] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 20:10:35] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-15 20:10:35] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-15 20:10:35] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-15 20:10:36] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-15 20:10:36] [INFO   ] discord.client: Closing the event loop.
+[2021-03-15 20:22:39] [INFO   ] discord.client: logging in using static token
+[2021-03-15 20:22:40] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-15 20:22:41] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-tmbj",{"micros":73161,"calls":["discord-sessions-prd-2-2",{"micros":70301,"calls":["start_session",{"micros":39042,"calls":["api-prd-main-q287",{"micros":36036,"calls":["get_user",{"micros":4541},"add_authorized_ip",{"micros":5397},"get_guilds",{"micros":5835},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":20862,"calls":[]}]}]}] (Session ID: e756e8b854fe34ad6b4b26ef79781f53).
+[2021-03-15 20:22:43] [INFO   ] discord_slash: Syncing commands...
+[2021-03-15 20:22:43] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-15 20:22:54] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-15 20:22:54] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-15 20:22:54] [INFO   ] discord.client: Cleaning up after 4 tasks.
+[2021-03-15 20:22:56] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-15 20:22:56] [INFO   ] discord.client: Closing the event loop.
+[2021-03-16 22:09:16] [INFO   ] discord.client: logging in using static token
+[2021-03-16 22:09:19] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-16 22:09:19] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-jx8j",{"micros":50187,"calls":["discord-sessions-prd-2-100",{"micros":48527,"calls":["start_session",{"micros":39075,"calls":["api-prd-main-5d53",{"micros":36732,"calls":["get_user",{"micros":3991},"add_authorized_ip",{"micros":7467},"get_guilds",{"micros":5142},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":5547,"calls":[]}]}]}] (Session ID: 871ee06c0c32e52845d998aaf6da6ba0).
+[2021-03-16 22:09:21] [INFO   ] discord_slash: Syncing commands...
+[2021-03-16 22:09:22] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-16 22:10:08] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-16 22:10:08] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-16 22:10:08] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-16 22:10:08] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-16 22:10:08] [INFO   ] discord.client: Closing the event loop.
+[2021-03-16 22:10:10] [INFO   ] discord.client: logging in using static token
+[2021-03-16 22:10:12] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-16 22:10:13] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-79mr",{"micros":74691,"calls":["discord-sessions-prd-2-94",{"micros":67329,"calls":["start_session",{"micros":45866,"calls":["api-prd-main-b0lt",{"micros":42984,"calls":["get_user",{"micros":5789},"add_authorized_ip",{"micros":3546},"get_guilds",{"micros":5799},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":19968,"calls":[]}]}]}] (Session ID: 43fb2f57b906e92e954b038926da92c2).
+[2021-03-16 22:10:15] [INFO   ] discord_slash: Syncing commands...
+[2021-03-16 22:10:15] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-16 22:15:51] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-16 22:15:51] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-16 22:15:51] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-16 22:15:51] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-16 22:15:51] [INFO   ] discord.client: Closing the event loop.
+[2021-03-17 21:47:07] [INFO   ] discord.client: logging in using static token
+[2021-03-17 21:47:09] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-17 21:47:09] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-7hzq",{"micros":51700,"calls":["discord-sessions-prd-2-101",{"micros":47986,"calls":["start_session",{"micros":29663,"calls":["api-prd-main-gbtt",{"micros":26401,"calls":["get_user",{"micros":2241},"add_authorized_ip",{"micros":1187},"get_guilds",{"micros":5154},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":14956,"calls":[]}]}]}] (Session ID: 4b86c0a0d4038b2559bb38846ede6041).
+[2021-03-17 21:47:11] [INFO   ] discord_slash: Syncing commands...
+[2021-03-17 21:47:11] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-17 21:50:00] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-17 21:50:00] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-17 21:50:00] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-17 21:50:00] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-17 21:50:00] [INFO   ] discord.client: Closing the event loop.
+[2021-03-17 21:50:05] [INFO   ] discord.client: logging in using static token
+[2021-03-17 21:50:06] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-17 21:50:07] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-dl7c",{"micros":80221,"calls":["discord-sessions-prd-2-143",{"micros":78658,"calls":["start_session",{"micros":35816,"calls":["api-prd-main-73n6",{"micros":29919,"calls":["get_user",{"micros":2064},"add_authorized_ip",{"micros":2003},"get_guilds",{"micros":4146},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":12335,"calls":[]}]}]}] (Session ID: d073915ea83c6a393d772be766f32ef0).
+[2021-03-17 21:50:09] [INFO   ] discord_slash: Syncing commands...
+[2021-03-17 21:50:10] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-17 22:19:09] [INFO   ] discord.client: logging in using static token
+[2021-03-17 22:19:12] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-17 22:19:12] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-5k6v",{"micros":73015,"calls":["discord-sessions-prd-2-82",{"micros":70654,"calls":["start_session",{"micros":55969,"calls":["api-prd-main-hsmm",{"micros":47333,"calls":["get_user",{"micros":4185},"add_authorized_ip",{"micros":3731},"get_guilds",{"micros":12660},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":6280,"calls":[]}]}]}] (Session ID: 8e04e0645639faea81c17bab314c750d).
+[2021-03-17 22:19:14] [INFO   ] discord_slash: Syncing commands...
+[2021-03-17 22:19:16] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-17 22:21:41] [INFO   ] discord.client: Received signal to terminate bot and event loop.
+[2021-03-17 22:21:41] [INFO   ] discord.client: Cleaning up tasks.
+[2021-03-17 22:21:41] [INFO   ] discord.client: Cleaning up after 3 tasks.
+[2021-03-17 22:21:41] [INFO   ] discord.client: All tasks finished cancelling.
+[2021-03-17 22:21:41] [INFO   ] discord.client: Closing the event loop.
+[2021-03-17 22:21:52] [INFO   ] discord.client: logging in using static token
+[2021-03-17 22:22:05] [INFO   ] discord.client: logging in using static token
+[2021-03-17 22:22:07] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-17 22:22:07] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-wft6",{"micros":118780,"calls":["discord-sessions-prd-2-84",{"micros":115807,"calls":["start_session",{"micros":95431,"calls":["api-prd-main-w74s",{"micros":92094,"calls":["get_user",{"micros":4702},"add_authorized_ip",{"micros":11008},"get_guilds",{"micros":16264},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":15524,"calls":[]}]}]}] (Session ID: a844a5d7d88ddae284977d2d29b945da).
+[2021-03-17 22:22:09] [INFO   ] discord_slash: Syncing commands...
+[2021-03-17 22:22:10] [INFO   ] discord_slash: Completed syncing all commands!
+[2021-03-18 10:09:09] [INFO   ] discord.client: logging in using static token
+[2021-03-18 10:09:11] [INFO   ] discord.gateway: Shard ID 0 has sent the IDENTIFY payload.
+[2021-03-18 10:09:11] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway: ["gateway-prd-main-l9jq",{"micros":45615,"calls":["discord-sessions-prd-2-132",{"micros":43127,"calls":["start_session",{"micros":25353,"calls":["api-prd-main-0t9n",{"micros":23319,"calls":["get_user",{"micros":3502},"add_authorized_ip",{"micros":1150},"get_guilds",{"micros":4773},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 79242d643163200371582747f2a5af1a).
+[2021-03-18 10:09:14] [INFO   ] discord_slash: Syncing commands...
+[2021-03-18 10:09:14] [INFO   ] discord_slash: Completed syncing all commands!
