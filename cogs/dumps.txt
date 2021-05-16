@@ -1,0 +1,96 @@
+avt_url = "https://cdn.discordapp.com/avatars/798557068998738000/d42b7eac0a9d8d804112a04b82a95964.png?size=1024"
+
+        if channel is None:
+            channel = ctx.message.channel.name
+            channel_id = ctx.message.channel.id
+        else:
+            bck = channel
+            channel = channel.name
+            channel_id = bck.id
+
+
+        await self.bot.testdb1.execute("CREATE TABLE IF NOT EXISTS automeme(guild_id bigint, isit character varying, channel character varying, webhook_url character varying, PRIMARY KEY (guild_id, channel, webhook_url))")
+        flag1 = await self.bot.testdb1.fetchval("SELECT isit FROM automeme WHERE guild_id = $1",ctx.guild.id)
+        flag2 = await self.bot.testdb1.fetchrow("SELECT isit FROM automeme WHERE guild_id = $1",ctx.guild.id)
+
+        webhook_url = await self.bot.testdb1.fetchval("SELECT webhook_url FROM automeme WHERE channel = $1",channel)
+
+        if webhook_url is None:
+            ch = discord.utils.get(ctx.guild.text_channels,id=channel_id)
+            hook = await ch.create_webhook(name="The Coderz Bot | Automeme")
+            hook_url = hook.url
+        # print(hook_url)
+
+        if not flag2:
+            await self.bot.testdb1.execute("INSERT INTO automeme(guild_id,isit,channel,webhook_url) VALUES ($1,$2,$3,$4)",ctx.guild.id,"enable",channel,hook_url) 
+            await ctx.send("Automeme enabled successfully")
+        if flag1 == "disable":
+            ch = discord.utils.get(ctx.guild.channels,name=channel)
+            w = await ch.webhooks()
+            hook = discord.utils.get(w,name="The Coderz Bot | Automeme")
+            if hook is None:
+                ch = discord.utils.get(ctx.guild.text_channels,id=channel_id)
+                hook = await ch.create_webhook(name="The Coderz Bot | Automeme")
+            hook_url = hook.url
+            await self.bot.testdb1.execute("UPDATE automeme SET isit = $1, webhook_url = $3, channel = $4 WHERE guild_id = $2","enable",ctx.guild.id,hook_url,ch.name)
+            await ctx.send(f"{tick} Automeme is enabled successfully!")
+        else:
+            await self.bot.testdb1.execute("UPDATE automeme SET isit = $1 WHERE guild_id = $2","enable",ctx.guild.id)
+
+
+        if flag1 == "enable":
+            ch = discord.utils.get(ctx.guild.channels,name=channel)
+            w = await ch.webhooks()
+            hook = discord.utils.get(w,name="The Coderz Bot | Automeme")
+            if hook is None:
+                ch = discord.utils.get(ctx.guild.text_channels,id=channel_id)
+                hook = await ch.create_webhook(name="The Coderz Bot | Automeme")
+            hook_url = hook.url
+            await self.bot.testdb1.execute("UPDATE automeme SET channel = $1, webhook_url = $3 WHERE guild_id = $2",channel,ctx.guild.id,hook_url)
+            await ctx.send(f"{tick} Channel updated successfully for automemes!")
+            self.run.start()
+            # pass
+
+    # @commands.command()
+    # async def get_url(self,ctx):
+    #     webhook_url = await self.bot.testdb1.fetchval("SELECT webhook_url FROM automeme WHERE isit = $1","enable")
+    #     await ctx.send(webhook_url)
+
+    # async def fetch_id(self,ctx):
+    #     return ctx.guild.id
+
+    @automeme.command()
+    @commands.bot_has_permissions(manage_webhooks=True)
+    @commands.has_permissions(manage_webhooks=True)
+    async def disable(self,ctx):
+        await self.bot.testdb1.execute("UPDATE automeme SET isit = $1 WHERE guild_id = $2","disable",ctx.guild.id)
+        await ctx.send(f"{tick} Automeme is now disabled for this server.")
+
+
+    @tasks.loop(seconds=15)
+    async def run(self):
+        # guild_id = self.fetch_id()
+        recs = await self.bot.testdb1.fetch("SELECT webhook_url FROM automeme WHERE isit = $1","enable")
+        for rec in recs:
+            # print(rec["webhook_url"])
+            url = rec["webhook_url"]
+            hook = discord.Webhook.from_url(url,adapter=discord.RequestsWebhookAdapter())
+            # print(hook)
+            try:
+                # await hook.send("Hello this is automeme 😂")
+                # while True:
+                #     r = requests.get("https://memes.blademaker.tv/api")
+                #     data = r.json()
+                #     if data['nsfw'] == False:
+                #         break
+                r = requests.get("https://memes.blademaker.tv/api")
+                data = r.json()
+                # r = requests.get("https://memes.blademaker.tv/api?lang=en")
+                # data = r.json()
+                color = await fetch_color(bot=self.bot,ctx=commands.Context)
+                em = discord.Embed(title=f"{data['title']}",color=color)
+                em.set_image(url=data['image'])
+                # em.set_footer(text=f"Requested by - {ctx.message.author}",icon_url=ctx.message.author.avatar_url)
+                await hook.send(embed=em)
+            except:
+                pass
