@@ -135,3 +135,6 @@ emojis/
 images/
 
 #config.json
+cogs/utils/__pycache__
+cogs/__pycache__
+__pycache__
