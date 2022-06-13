@@ -70,7 +70,7 @@ class Afk(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self,message):
-        if message.guild is None:
+        if not message.guild or message.author.bot:
             return
         ctx = await self.bot.get_context(message)
         afk_user_ids_rec = await self.bot.testdb1.fetch("SELECT user_id FROM userafk WHERE guild_id = $1",message.guild.id)
